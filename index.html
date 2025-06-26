@@ -38,6 +38,7 @@
       background-color: #7a3cff;
       color: #fff;
       font-weight: 600;
+      cursor: pointer;
     }
 
     button:hover, select:hover {
@@ -71,38 +72,48 @@
     .hint button {
       background-color: #ddd;
       color: #000;
+      font-weight: 600;
     }
 
     #hintText {
       margin-top: 0.5rem;
       font-style: italic;
+      display: none;
     }
   </style>
 </head>
 <body>
   <h1>DevPrompt – Coding Prompt Generator</h1>
-  <select id="difficulty">
+
+  <label for="difficulty" style="display:none;">Difficulty</label>
+  <select id="difficulty" name="difficulty">
     <option value="Easy">Easy</option>
     <option value="Medium">Medium</option>
     <option value="Hard">Hard</option>
   </select>
-  <select id="topic">
+
+  <label for="topic" style="display:none;">Topic</label>
+  <select id="topic" name="topic">
     <option value="Arrays">Arrays</option>
     <option value="Graphs">Graphs</option>
     <option value="Strings">Strings</option>
   </select>
-  <select id="language">
+
+  <label for="language" style="display:none;">Language</label>
+  <select id="language" name="language">
     <option value="Python">Python</option>
     <option value="JavaScript">JavaScript</option>
     <option value="C++">C++</option>
   </select>
-  <button onclick="generatePrompt()">🎲 Generate</button>
+
+  <button type="button" onclick="generatePrompt()">🎲 Generate</button>
 
   <div class="card">
     <div id="promptText">No prompt yet.</div>
     <div class="hint">
-      <strong>Hint:</strong> <button onclick="revealHint()">Click to reveal</button>
-      <div id="hintText" style="display:none;"></div>
+      <strong>Hint:</strong> 
+      <button type="button" onclick="revealHint()">Click to reveal</button>
+      <div id="hintText"></div>
     </div>
   </div>
 
@@ -165,3 +176,10 @@
   </script>
 </body>
 </html>
+
+   
+
+   
+   
+       
+   
